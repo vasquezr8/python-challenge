@@ -28,12 +28,26 @@ with open("election_data.csv") as csvfile:
                 raymon_votes_counter = raymon_votes_counter + 1
 
     # Summary table outside of loop
+    charles_pct = (charles_votes_counter / total_votes_counter) * 100
+    charles_rounded = round(charles_pct, 3)
+
+    diana_pct = (diana_votes_counter / total_votes_counter) * 100
+    diana_rounded = round(diana_pct, 3)
+
+    raymon_pct = (raymon_votes_counter / total_votes_counter) * 100
+    raymon_rounded = round(raymon_pct, 3)
+
+    election_winner = max(charles_votes_counter, diana_votes_counter, raymon_votes_counter)
+
     print("Election Results")
     print("-------------------------")
 
     print(f"Total Votes: {total_votes_counter}")
     print("-------------------------")
 
-    print(f"{charles_votes_counter}")
-    print(f"{diana_votes_counter}")
-    print(f"{raymon_votes_counter}")
+    print(f"Charles Casper Stockham: {charles_rounded}% ({charles_votes_counter})")
+    print(f"Diana DeGette: {diana_rounded}% ({diana_votes_counter})")
+    print(f"Raymon Anthony Doane: {raymon_rounded}% ({raymon_votes_counter})")
+    print("-------------------------")
+
+    print(f"Winner: {election_winner}")
