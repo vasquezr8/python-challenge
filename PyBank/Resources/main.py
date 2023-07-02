@@ -52,3 +52,7 @@ with open("budget_data.csv") as csvfile:
     print(f"Average Change: ${rounded_avg}")
     print(f"Greatest Increase in Profits: {greatest_increase_month} (${greatest_increase})")
     print(f"Greatest Decrease in Profits: {greatest_decrease_month} (${greatest_decrease})")
+
+#Write everything to a text file
+with open("main.txt", "w") as f:
+    f.write("main")
