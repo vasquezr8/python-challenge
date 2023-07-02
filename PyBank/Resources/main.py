@@ -12,6 +12,10 @@ with open("budget_data.csv") as csvfile:
 
     sum_profit_losses = 0
 
+    greatest_increase = 0
+
+    greatest_decrease = 999999999999
+
     # Add up profit/losses
     for row in csvreader:
 
@@ -25,6 +29,15 @@ with open("budget_data.csv") as csvfile:
 
             sum_profit_losses = sum_profit_losses + change
 
+            if change > greatest_increase:
+                greatest_increase = change
+                greatest_increase_month = row[0]
+
+            if change < greatest_decrease:
+                greatest_decrease = change
+                greatest_decrease_month = row[0]
+
+
         last_profit_losses = row[1]
 
     # Summary table outside of loop
@@ -37,3 +50,5 @@ with open("budget_data.csv") as csvfile:
     print(f"Total Months: {total_months}")
     print(f"Total: ${total_profit_losses}")
     print(f"Average Change: ${rounded_avg}")
+    print(f"Greatest Increase in Profits: {greatest_increase_month} (${greatest_increase})")
+    print(f"Greatest Decrease in Profits: {greatest_decrease_month} (${greatest_decrease})")
