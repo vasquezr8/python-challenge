@@ -55,4 +55,11 @@ with open("budget_data.csv") as csvfile:
 
 #Write everything to a text file
 with open("main.txt", "w") as f:
-    f.write("main")
+    f.write("Financial Analysis\n")
+    f.write("----------------------------\n")
+
+    f.write(f"Total Months: {total_months}\n")
+    f.write(f"Total: ${total_profit_losses}\n")
+    f.write(f"Average Change: ${rounded_avg}\n")
+    f.write(f"Greatest Increase in Profits: {greatest_increase_month} (${greatest_increase})\n")
+    f.write(f"Greatest Decrease in Profits: {greatest_decrease_month} (${greatest_decrease})\n")
