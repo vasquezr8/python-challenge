@@ -1,10 +1,5 @@
 import os
 import csv
-import pandas as pd
-from pathlib import Path
-
-data_file = Path("election_data.csv")
-data_file_df = pd.read_csv(data_file)
 
 with open("election_data.csv") as csvfile:
 
@@ -33,6 +28,10 @@ with open("election_data.csv") as csvfile:
                 raymon_votes_counter = raymon_votes_counter + 1
 
     # Summary table outside of loop
+    var = {charles_votes_counter: "Charles Casper Stockham",
+            diana_votes_counter: "Diana DeGette",
+            raymon_votes_counter: "Raymon Anthony Doane"}
+
     charles_pct = (charles_votes_counter / total_votes_counter) * 100
     charles_rounded = round(charles_pct, 3)
 
@@ -41,8 +40,6 @@ with open("election_data.csv") as csvfile:
 
     raymon_pct = (raymon_votes_counter / total_votes_counter) * 100
     raymon_rounded = round(raymon_pct, 3)
-
-    df['Candidate'].mode()
 
     print("Election Results")
     print("-------------------------")
@@ -55,5 +52,5 @@ with open("election_data.csv") as csvfile:
     print(f"Raymon Anthony Doane: {raymon_rounded}% ({raymon_votes_counter})")
     print("-------------------------")
 
-    print(f'Winner: {election_winner}')
+    print(f'Winner: {var.get(max(var))}')
     print("-------------------------")
