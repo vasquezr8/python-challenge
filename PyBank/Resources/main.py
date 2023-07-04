@@ -54,9 +54,7 @@ with open("budget_data.csv") as csvfile:
     print(f"Greatest Decrease in Profits: {greatest_decrease_month} (${greatest_decrease})")
 
 #Write everything to a text file
-output_path = os.path.join("..", "analysis", "main.txt")
-
-with open(output_path, "w") as f:
+with open("main.txt", "w") as f:
     f.write("Financial Analysis\n")
     f.write("----------------------------\n")
 
