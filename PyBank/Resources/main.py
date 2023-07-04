@@ -62,4 +62,4 @@ with open("main.txt", "w") as f:
     f.write(f"Total: ${total_profit_losses}\n")
     f.write(f"Average Change: ${rounded_avg}\n")
     f.write(f"Greatest Increase in Profits: {greatest_increase_month} (${greatest_increase})\n")
-    f.write(f"Greatest Decrease in Profits: {greatest_decrease_month} (${greatest_decrease})\n")
+    f.write(f"Greatest Decrease in Profits: {greatest_decrease_month} (${greatest_decrease})")
