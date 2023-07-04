@@ -12,6 +12,7 @@ with open("election_data.csv") as csvfile:
     diana_votes_counter = 0
     raymon_votes_counter = 0
 
+    #Count up votes
     for row in csvreader:
 
         candidate = row[2]
@@ -52,5 +53,21 @@ with open("election_data.csv") as csvfile:
     print(f"Raymon Anthony Doane: {raymon_rounded}% ({raymon_votes_counter})")
     print("-------------------------")
 
-    print(f'Winner: {var.get(max(var))}')
+    print(f"Winner: {var.get(max(var))}")
     print("-------------------------")
+
+#Write everything to a text file
+with open("main.txt", "w") as f:
+    f.write("Election Results\n")
+    f.write("-------------------------\n")
+
+    f.write(f"Total Votes: {total_votes_counter}\n")
+    f.write("-------------------------\n")
+
+    f.write(f"Charles Casper Stockham: {charles_rounded}% ({charles_votes_counter})\n")
+    f.write(f"Diana DeGette: {diana_rounded}% ({diana_votes_counter})\n")
+    f.write(f"Raymon Anthony Doane: {raymon_rounded}% ({raymon_votes_counter})\n")
+    f.write("-------------------------\n")
+
+    f.write(f"Winner: {var.get(max(var))}\n")
+    f.write("-------------------------")
