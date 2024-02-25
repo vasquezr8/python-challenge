@@ -1,9 +1,34 @@
-# python-challenge
-Module 3 Challenge
+# Financial Analysis and Election Vote Counting with Python
 
-**Profit/Losses and Election Data Analysis**
+## Background
 
-**Code Citations:**
+I tackled two challenges: PyBank and PyPoll. Both tasks simulated real-world scenarios where Python scripting skills were essential.
+
+## PyBank
+
+In PyBank, I analyzed the financial records of a company using Python. The financial dataset, budget_data.csv, contained two columns: "Date" and "Profit/Losses". My script calculated the following values:
+
+- Total number of months
+- Net total amount of profit/losses
+- Changes in profit/losses over the entire period, along with the average change
+- Greatest increase in profits (date and amount)
+- Greatest decrease in profits (date and amount)
+
+## PyPoll
+
+In PyPoll, I modernized a small, rural town's vote-counting process using Python. The poll data, election_data.csv, contained three columns: "Voter ID", "County", and "Candidate". My script calculated the following values:
+
+- Total number of votes cast
+- List of candidates who received votes
+- Percentage of votes each candidate won
+- Total number of votes each candidate won
+- Winner of the election based on popular vote
+
+## Conclusion
+
+I wrote separate scripts for each dataset and ensured they worked correctly for their respective data. Upon completion, both scripts printed the analysis to the terminal and exported a text file with the results.
+
+## Code Citations
 
 Convert Variables to Integers:
 (Found in lines 24 and 28 of main.py PyBank file)
